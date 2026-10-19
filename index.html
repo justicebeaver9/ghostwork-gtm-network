@@ -1,1 +1,259 @@
-PLACEHOLDER - will replace with full content in next step if needed
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghostwork Labs — GTM Roles | Talent moves in the dark.</title>
+<meta name="description" content="The private network for SaaS and technology sales & GTM roles in the United States. Compensation, team insights, and signals candidates actually want.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #07090d;
+  --surface: #11141a;
+  --surface2: #1a1e27;
+  --border: #2a2f3a;
+  --text: #e8eaed;
+  --muted: #8b949e;
+  --accent: #c9a227;
+  --accent2: #4ade80;
+  --danger: #f87171;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: Inter, system-ui, sans-serif; line-height: 1.5; }
+a { color: var(--accent); text-decoration: none; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+header { border-bottom: 1px solid var(--border); padding: 20px 0; position: sticky; top: 0; background: rgba(7,9,13,0.9); backdrop-filter: blur(12px); z-index: 10; }
+.nav { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-family: 'Space Grotesk', sans-serif; font-weight: 600; font-size: 1.4rem; }
+.logo span { color: var(--accent); }
+.tagline { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+.btn { background: var(--accent); color: #000; padding: 10px 18px; border-radius: 8px; font-weight: 600; border: none; cursor: pointer; }
+.btn.secondary { background: transparent; color: var(--text); border: 1px solid var(--border); }
+.hero { padding: 80px 0 60px; text-align: center; }
+.hero h1 { font-family: 'Space Grotesk', sans-serif; font-size: 3.2rem; line-height: 1.1; margin-bottom: 16px; }
+.hero p { font-size: 1.25rem; color: var(--muted); max-width: 640px; margin: 0 auto 32px; }
+.filters { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; justify-content: center; }
+.filter { background: var(--surface); border: 1px solid var(--border); padding: 8px 16px; border-radius: 999px; font-size: 0.9rem; cursor: pointer; }
+.filter.active { background: var(--accent); color: #000; border-color: var(--accent); }
+.jobs { display: grid; gap: 16px; }
+.job-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 24px; transition: border-color 0.2s; }
+.job-card:hover { border-color: var(--accent); }
+.job-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+.company { font-weight: 600; color: var(--accent); }
+.title { font-size: 1.25rem; font-weight: 600; margin: 4px 0; }
+.meta { color: var(--muted); font-size: 0.9rem; }
+.comp { text-align: right; }
+.ote { font-size: 1.4rem; font-weight: 700; color: var(--accent2); }
+.base { font-size: 0.85rem; color: var(--muted); }
+.insights { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0; }
+.insight { background: var(--surface2); padding: 12px; border-radius: 8px; font-size: 0.85rem; }
+.insight strong { display: block; color: var(--text); margin-bottom: 4px; }
+.locked { filter: blur(4px); user-select: none; position: relative; }
+.locked::after { content: "Subscribe to unlock full insights"; position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(7,9,13,0.7); border-radius: 8px; font-weight: 600; color: var(--accent); }
+footer { margin-top: 80px; padding: 40px 0; border-top: 1px solid var(--border); text-align: center; color: var(--muted); font-size: 0.9rem; }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.8); display: none; align-items: center; justify-content: center; z-index: 100; }
+.modal.open { display: flex; }
+.modal-content { background: var(--surface); padding: 40px; border-radius: 16px; max-width: 480px; width: 90%; text-align: center; }
+.pricing { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0; }
+.price-card { border: 1px solid var(--border); padding: 20px; border-radius: 12px; }
+.price-card.featured { border-color: var(--accent); }
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div>
+      <div class="logo">Ghostwork<span>Labs</span></div>
+      <div class="tagline">Talent moves in the dark.</div>
+    </div>
+    <div>
+      <button class="btn secondary" onclick="openModal()">Log in</button>
+      <button class="btn" onclick="openModal()">Subscribe</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>SaaS & Tech GTM Roles.<br>The ones that actually pay.</h1>
+    <p>Compensation ranges, sales team composition, quota reality, ramp expectations, and company signals — curated for candidates who refuse to fly blind.</p>
+    <div style="display:flex; gap:12px; justify-content:center;">
+      <button class="btn" onclick="openModal()">Get full access — $29/mo</button>
+      <button class="btn secondary" onclick="document.getElementById('jobs').scrollIntoView()">Browse open roles</button>
+    </div>
+  </div>
+</section>
+
+<main class="container" id="jobs">
+  <div class="filters">
+    <div class="filter active" data-role="all">All roles</div>
+    <div class="filter" data-role="AE">Account Executive</div>
+    <div class="filter" data-role="SDR">SDR / BDR</div>
+    <div class="filter" data-role="SE">Sales Engineer</div>
+    <div class="filter" data-role="CSM">Customer Success</div>
+    <div class="filter" data-role="Leadership">Leadership</div>
+  </div>
+  <div class="jobs" id="job-list"></div>
+</main>
+
+<footer>
+  <div class="container">
+    <p>Ghostwork Labs · Talent moves in the dark. · ghostworklabs@gmail.com</p>
+    <p style="margin-top:8px;">For companies: <a href="#" onclick="openModal(); return false;">Feature a role</a> · <a href="#" onclick="openModal(); return false;">Partner for placements</a></p>
+  </div>
+</footer>
+
+<div class="modal" id="modal">
+  <div class="modal-content">
+    <h2 style="margin-bottom:8px;">Unlock the full picture</h2>
+    <p style="color:var(--muted); margin-bottom:24px;">Full compensation breakdowns, sales team size & structure, quota attainment history, ramp data, equity details, and company signals.</p>
+    <div class="pricing">
+      <div class="price-card">
+        <div style="font-size:1.5rem; font-weight:700;">$29<span style="font-size:1rem; font-weight:400;">/mo</span></div>
+        <div style="color:var(--muted); font-size:0.85rem; margin:8px 0;">Full access + weekly digest</div>
+        <button class="btn" style="width:100%;" onclick="alert('Payment link will go here — Stripe')">Subscribe</button>
+      </div>
+      <div class="price-card featured">
+        <div style="font-size:1.5rem; font-weight:700;">$249<span style="font-size:1rem; font-weight:400;">/yr</span></div>
+        <div style="color:var(--muted); font-size:0.85rem; margin:8px 0;">Save 28% · Priority alerts</div>
+        <button class="btn" style="width:100%;" onclick="alert('Annual payment link')">Go annual</button>
+      </div>
+    </div>
+    <p style="font-size:0.85rem; color:var(--muted);">Companies: email ghostworklabs@gmail.com to feature roles or discuss placement partnerships (10–25% of first-year OTE).</p>
+    <button class="btn secondary" style="margin-top:16px;" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+const jobs = [
+  {
+    company: "Series B AI Infrastructure",
+    title: "Enterprise Account Executive",
+    location: "Remote (US)",
+    role: "AE",
+    base: "$140–160K",
+    ote: "$280–320K",
+    equity: "0.15–0.30%",
+    insights: {
+      "Sales team": "12 AEs, 8 SDRs, 4 SEs. Fully ramped team of ~28",
+      "Quota": "$1.4M ARR, 4.5–5× OTE. Attainment ~65% last two quarters",
+      "Ramp": "90-day ramp to full quota. Manager is former Snowflake AE",
+      "Motion": "Enterprise outbound + inbound. Avg deal $85K ACV, 120-day cycle",
+      "Signals": "Series B $48M (2025). Expanding into regulated industries. Glassdoor 4.2"
+    },
+    locked: true
+  },
+  {
+    company: "Growth-stage Cybersecurity",
+    title: "Mid-Market AE",
+    location: "Austin / Remote",
+    role: "AE",
+    base: "$100–120K",
+    ote: "$200–240K",
+    equity: "0.08–0.15%",
+    insights: {
+      "Sales team": "22 AEs across MM + Enterprise. Strong enablement team",
+      "Quota": "$1.1M. Top performers clearing $400K+",
+      "Ramp": "60 days. Clear path to Enterprise",
+      "Motion": "Product-led with sales-assist. High velocity",
+      "Signals": "IPO trajectory. Recent CRO hire from Datadog"
+    },
+    locked: true
+  },
+  {
+    company: "Seed-stage Vertical SaaS",
+    title: "Founding SDR",
+    location: "Remote (US)",
+    role: "SDR",
+    base: "$65–75K",
+    ote: "$95–110K",
+    equity: "0.10–0.25%",
+    insights: {
+      "Sales team": "1 AE + founder. Building the first outbound motion",
+      "Quota": "12 SQLs/month after ramp",
+      "Ramp": "45 days. Direct access to founders",
+      "Motion": "Pure outbound into manufacturing / logistics",
+      "Signals": "Pre-product market fit. High risk, high equity upside"
+    },
+    locked: false
+  },
+  {
+    company: "Public SaaS (Growth)",
+    title: "Sales Engineer",
+    location: "NYC / Remote",
+    role: "SE",
+    base: "$160–180K",
+    ote: "$210–240K",
+    equity: "RSUs",
+    insights: {
+      "Sales team": "40+ AEs. SE ratio ~1:3",
+      "Quota": "Team-based + individual overlay",
+      "Ramp": "Standard enterprise SE ramp",
+      "Motion": "Complex technical sales, security + platform",
+      "Signals": "Public company. Strong brand recognition"
+    },
+    locked: true
+  },
+  {
+    company: "Series C DevTools",
+    title: "Director of Sales",
+    location: "Remote (US)",
+    role: "Leadership",
+    base: "$180–210K",
+    ote: "$320–380K",
+    equity: "0.4–0.7%",
+    insights: {
+      "Sales team": "Will own 8–12 AEs. Building mid-market pod",
+      "Quota": "Team roll-up + personal overlay",
+      "Ramp": "N/A — leadership hire",
+      "Motion": "Scaling from founder-led to repeatable",
+      "Signals": "Strong NRR. Recent GTM leadership upgrades"
+    },
+    locked: true
+  }
+];
+
+function renderJobs(filter = 'all') {
+  const list = document.getElementById('job-list');
+  list.innerHTML = '';
+  jobs.filter(j => filter === 'all' || j.role === filter).forEach(job => {
+    const insightsHtml = Object.entries(job.insights).map(([k,v]) => 
+      `<div class="insight ${job.locked ? 'locked' : ''}"><strong>${k}</strong>${v}</div>`
+    ).join('');
+    list.innerHTML += `
+      <div class="job-card">
+        <div class="job-header">
+          <div>
+            <div class="company">${job.company}</div>
+            <div class="title">${job.title}</div>
+            <div class="meta">${job.location} · ${job.role}</div>
+          </div>
+          <div class="comp">
+            <div class="ote">${job.ote} OTE</div>
+            <div class="base">Base ${job.base}</div>
+          </div>
+        </div>
+        <div class="insights">${insightsHtml}</div>
+        ${job.locked ? '<button class="btn" style="margin-top:12px;" onclick="openModal()">Unlock full details</button>' : '<button class="btn secondary" style="margin-top:12px;">Apply / Track</button>'}
+      </div>
+    `;
+  });
+}
+
+document.querySelectorAll('.filter').forEach(el => {
+  el.addEventListener('click', () => {
+    document.querySelectorAll('.filter').forEach(f => f.classList.remove('active'));
+    el.classList.add('active');
+    renderJobs(el.dataset.role);
+  });
+});
+
+function openModal() { document.getElementById('modal').classList.add('open'); }
+function closeModal() { document.getElementById('modal').classList.remove('open'); }
+document.getElementById('modal').addEventListener('click', e => { if (e.target.id === 'modal') closeModal(); });
+
+renderJobs();
+</script>
+</body>
+</html>
